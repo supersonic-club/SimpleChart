@@ -64,6 +64,7 @@ public struct SCRangeChartConfig {
         var maxUpper = maxUpper
         if minLower == Double.infinity {
             for item in chartData {
+                if item.lower == 0 { continue }
                 if item.lower < minLower {
                     minLower = item.lower
                 }
@@ -71,6 +72,7 @@ public struct SCRangeChartConfig {
         }
         if maxUpper == -Double.infinity {
             for item in chartData {
+                if item.upper == 0 { continue }
                 if item.upper > maxUpper {
                     maxUpper = item.upper
                 }
