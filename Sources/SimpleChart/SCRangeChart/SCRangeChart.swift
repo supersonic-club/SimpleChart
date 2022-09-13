@@ -27,7 +27,7 @@ public struct SCRangeChart: View {
                     HStack(alignment: .bottom, spacing: chartConfig.spacingFactor*proxy.size.width, content: {
                         ForEach(chartData.indices) { index in
                             ZStack {
-                                if chartData.lower == 0 && chartData.upper == 0 {
+                                if chartData[index].lower == 0 && chartData[index].upper == 0 {
                                     Spacer()
                                         .frame(width: chartConfig.widthFactor * proxy.size.width)
                                 }
