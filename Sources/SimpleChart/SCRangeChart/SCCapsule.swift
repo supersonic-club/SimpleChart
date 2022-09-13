@@ -24,6 +24,8 @@ internal struct SCCapsule: View {
         self.size = size
         self.width = config.widthFactor * size.width
         self.height = (size.height * (data.upper - data.lower)) / (config.max - config.min)
+        self.height = max(self.width, self.height)
+        
         self.offset = (size.height * (data.lower - config.min)) / (config.max - config.min)
     }
     
