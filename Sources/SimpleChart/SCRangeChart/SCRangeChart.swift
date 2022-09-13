@@ -48,7 +48,6 @@ public struct SCRangeChart: View {
                 .frame(width: proxy.size.width, height: proxy.size.height)
             }
         }
-        .padding(.all, 5)
     }
 }
 
