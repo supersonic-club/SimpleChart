@@ -26,8 +26,14 @@ public struct SCRangeChart: View {
                     Spacer().frame(width: proxy.size.width)
                     HStack(alignment: .bottom, spacing: chartConfig.spacingFactor*proxy.size.width, content: {
                         ForEach(chartData.indices) { index in
-                            SCCapsule(self.chartConfig, self.chartData[index], proxy.size)
-                                .foregroundColor(.white)
+                            if chartData.lower == 0 && chartData.upper == 0 {
+                                Spacer()
+                                    .frame(width: chartConfig.widthFactor * proxy.size.width)
+                            }
+                                                    else {
+                                SCCapsule(self.chartConfig, self.chartData[index], proxy.size)
+                                    .foregroundColor(.white)
+                                                    }
                         }
                     })
                 }
